@@ -58,14 +58,18 @@
     <Folder Include="Properties" />
     <Folder Include="Tables" />
     <Folder Include="Procedures" />
+    <Folder Include="Type" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Projects.sql" />
     <Build Include="Tables\Tasks.sql" />
     <PostDeploy Include="Procedures\Add_Task.sql" />
-    <Build Include="Procedures\Add_Task_And_Project.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Hierarchy.DB.publish.xml" />
+    <None Include="Procedures\Report.sql" />
+    <None Include="Procedures\Create_MemoryReportTable_.sql" />
+    <None Include="Procedures\Add_Task_And_Project.sql" />
+    <None Include="TYpe\MemoryReportTable.sql" />
   </ItemGroup>
 </Project>

@@ -8,4 +8,3 @@
   p_startdate  DATE  NOT NULL,
   p_finishdate DATE NOT NULL   
 )
-GO

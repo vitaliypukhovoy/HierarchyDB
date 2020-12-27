@@ -1,4 +1,6 @@
-﻿CREATE PROC dbo.Add_Task_And_Project
+﻿USE[PMS.HierarchyDB]
+GO
+CREATE PROC dbo.Add_Task_And_Project
   @p_code AS INT, @p_mgrid AS INT = NULL, @p_name AS VARCHAR(25) = "Project 1",
   @p_startdate AS DATE = '2008-01-01', @p_finishdate AS DATE = '2008-12-31'
 AS  

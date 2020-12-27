@@ -1,10 +1,8 @@
 ﻿using Dapper;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
@@ -18,7 +16,7 @@ namespace PMS.WebAPI.Repo
 
         private readonly IConfiguration _config;
         private readonly string Connectionstring = "DefaultConnection";
-        private string _tableName;
+        private readonly string _tableName;
 
         public Repository(IConfiguration config, string tableName)
         {          
@@ -86,11 +84,11 @@ namespace PMS.WebAPI.Repo
         }
 
 
-        public async Task InsertAsync(string insertQuery, DynamicParameters spParms, CommandType commandType = CommandType.StoredProcedure)
+        public async Task InsertAsync(string insertQuery, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
         {           
             using (var connection = CreateConnection())
             {
-                await connection.ExecuteAsync(insertQuery, spParms, null, null, commandType);             
+                await connection.ExecuteAsync(insertQuery, parms, null, null, commandType);             
             }
         }
 
