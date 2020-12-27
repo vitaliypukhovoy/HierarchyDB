@@ -47,6 +47,18 @@ namespace PMS.WebAPI.Repo
                 return await connection.QueryAsync<T>($"SELECT * FROM {_tableName}");
             }
         }
+
+
+        //Report Get
+        public async Task<IEnumerable<T>> GetAsync(string insertQuery, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
+        {
+
+            using (var connection = CreateConnection())
+            {
+              return   await connection.QueryAsync<T>(insertQuery, null,null,null, commandType);              
+            }
+        }
+
         public async Task DeleteRowAsync(int id)
         {
             using (var connection = CreateConnection())
@@ -83,7 +95,7 @@ namespace PMS.WebAPI.Repo
                     select prop.Name).ToList();
         }
 
-
+        // Create Project and Task Post
         public async Task InsertAsync(string insertQuery, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure)
         {           
             using (var connection = CreateConnection())

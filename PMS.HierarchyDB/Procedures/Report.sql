@@ -1,5 +1,4 @@
-﻿USE[PMS.HierarchyDB]
-GO
+﻿
 CREATE PROC [dbo].[Report] 
  @p_startdate AS DATE = '2008-01-01', @p_finishdate AS DATE = '2008-12-31'
 

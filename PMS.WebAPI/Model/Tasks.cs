@@ -9,6 +9,7 @@ namespace PMS.WebAPI.Model
         public int p_id { get; set; }
         public int t_mgrid { get; set; }
         public string t_name { get; set; }
+        public string t_description { get; set; }
         public SqlHierarchyId t_hid { get; set; }
         public Int16 t_lvl { get; set; }
         public DateTime t_startdate { get; set; }

@@ -38,7 +38,7 @@ namespace PMS.WebAPI.Controllers
             spParms.Add("t_mgrid", data.t_mgrid, DbType.Int32);
             spParms.Add("t_startdate", DateTime.Parse(data.t_startdate), DbType.Date);
             spParms.Add("t_finishdate", DateTime.Parse(data.t_finishdate), DbType.Date);
-            spParms.Add("t_state", data.t_state, DbType.Int32);//@t_mgrid
+            spParms.Add("t_state", data.t_state, DbType.Int32);
 
             try
             {

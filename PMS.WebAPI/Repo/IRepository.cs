@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace PMS.WebAPI.Repo
 {
     public interface IRepository<T>
-    {       
+    {
+        Task<IEnumerable<T>> GetAsync(string insertQuery, DynamicParameters parms, CommandType commandType = CommandType.StoredProcedure);
         Task<IEnumerable<T>> GetAllAsync();
         Task DeleteRowAsync(int id);
         Task<T> GetAsync(int id);

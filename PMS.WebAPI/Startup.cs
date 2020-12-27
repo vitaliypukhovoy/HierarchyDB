@@ -8,6 +8,8 @@ using PMS.Infrastructure.DataAccess.Context;
 using PMS.WebAPI.Services;
 using PMS.WebAPI.Repo;
 using PMS.WebAPI.Model;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace PMS.WebAPI
 {
@@ -32,7 +34,9 @@ namespace PMS.WebAPI
             //Register dapper in scope    
             services.AddScoped<IRepository<Projects>, Repository<Projects>>((_)=> new Repository<Projects>(Configuration, "Projects"));
 
-            services.AddScoped<IRepository<Tasks>, Repository<Tasks>>((_) => new Repository<Tasks>(Configuration, "Tasks"));
+            //services.AddScoped<IRepository<Tasks>, Repository<Tasks>>((_) => new Repository<Tasks>(Configuration, "Tasks"));
+
+            services.AddScoped<IRepository<MemoryReportTable>, Repository<MemoryReportTable>>((_) => new Repository<MemoryReportTable>(Configuration, "MemoryReportTable"));
             //Data            
             services.AddTransient<PMSContext>();
         }
