@@ -1,32 +1,30 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using PMS.Infrastructure.DataAccess.Repo;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using PMS.Infrastructure.DataAccess.Context;
-using PMS.Infrastructure.DataAccess.Services;
-using System.Configuration;
-using Microsoft.EntityFrameworkCore;
+using PMS.Infrastructure.DataAccess.Export;
+using PMS.Infrastructure.DataAccess.Model;
+using PMS.Infrastructure.DataAccess.Repo;
 
 namespace PMS.Infrastructure.IoC
 {
     public class DependencyContainer
     {
-        public static void RegisterServices(IServiceCollection services)
+        public static void RegisterServices(IServiceCollection services, IConfiguration Configuration)
         {
-
-           
-            ////services.AddDbContext<PMSContext>(options =>
-            ////          options.UseSqlServer(
-            ////              Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<PMSContext>(
+                    options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
 
-            //services.AddDbContext<PMSContext>(
-            //    options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
+            services.AddTransient<IExportToExcel, ExportToExcel>((_)=> new ExportToExcel());
 
-            ////Register dapper in scope    
-            //services.AddScoped<IDapper, Dapperr>();
-            ////Data
-            //services.AddTransient<IProjectRepository, ProjectRepository>();
-            //services.AddTransient<ITaskRepository, TaskRepository>();
-            //services.AddTransient<PMSContext>();           
+            services.AddTransient<IRepository<Projects>, Repository<Projects>>((_) => new Repository<Projects>(Configuration, "Projects"));
+
+            services.AddTransient<IRepository<Tasks>, Repository<Tasks>>((_) => new Repository<Tasks>(Configuration, "Tasks"));
+
+            services.AddTransient<IRepository<MemoryReportTable>, Repository<MemoryReportTable>>((_) => new Repository<MemoryReportTable>(Configuration, "MemoryReportTable"));
+
+            services.AddTransient<PMSContext>();
         }
     }
 }

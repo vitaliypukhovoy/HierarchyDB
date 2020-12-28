@@ -25,5 +25,10 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PMS.Infrastructure.IoC\PMS.Infrastructure.IoC.csproj" />
+    <ProjectReference Include="..\PMSInfrastructure\PMS.Infrastructure.csproj" />
+  </ItemGroup>
+
 
 </Project>

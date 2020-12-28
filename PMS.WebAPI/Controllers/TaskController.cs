@@ -1,9 +1,8 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
-using PMS.WebAPI.Model;
-using PMS.WebAPI.Repo;
+using PMS.Infrastructure.DataAccess.Model;
+using PMS.Infrastructure.DataAccess.Repo;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Threading.Tasks;
 
@@ -22,9 +21,39 @@ namespace PMS.WebAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Tasks>> Get()
+        public async Task<ActionResult> Get()
         {
-            return await _repo.GetAllAsync();
+            ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();
+
+            try
+            {
+                var data = await _repo.GetAllAsync(); ;
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.ReturnMessage.Add(ex.Message);
+                return BadRequest(returnResponse);
+            }
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult> Get(int id)
+        {
+            ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();
+
+            try
+            {
+                var data = await _repo.GetAsync(id, "t_id");
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.ReturnMessage.Add(ex.Message);
+                return BadRequest(returnResponse);
+            }
         }
 
 
@@ -33,7 +62,7 @@ namespace PMS.WebAPI.Controllers
         {
             ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();
             var spParms = new DynamicParameters();
-            spParms.Add("p_id", data.p_id, DbType.Int32);           
+            spParms.Add("p_id", data.p_id, DbType.Int32);
             spParms.Add("t_name", data.t_name, DbType.String);
             spParms.Add("t_mgrid", data.t_mgrid, DbType.Int32);
             spParms.Add("t_startdate", DateTime.Parse(data.t_startdate), DbType.Date);
@@ -53,17 +82,48 @@ namespace PMS.WebAPI.Controllers
             }
         }
 
-
-        // PUT api/<TaskController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<ActionResult> Put(int id, [FromBody] Tasks data)
         {
+            ResponseModel<Tasks> returnResponse = new ResponseModel<Tasks>();
+            var spParms = new DynamicParameters();
+            spParms.Add("Id", id, DbType.Int32);
+            spParms.Add("name", data.t_name, DbType.String);
+
+            try
+            {
+                await _repo.UpdateAsync($"UPDATE [dbo].[Tasks] SET  t_name = @name  WHERE t_id = @Id", spParms, CommandType.Text);
+                return Ok(returnResponse);
+            }
+            catch (Exception ex)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.ReturnMessage.Add(ex.Message);
+                return BadRequest(returnResponse);
+            }
         }
 
-        // DELETE api/<TaskController>/5
+
+
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
+            ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();
+
+            var spParms = new DynamicParameters();
+            spParms.Add("Id", id, DbType.Int32);
+
+            try
+            {
+                await _repo.RemoveAsync(id, "t_id");
+                return Ok(returnResponse);
+            }
+            catch (Exception ex)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.ReturnMessage.Add(ex.Message);
+                return BadRequest(returnResponse);
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ namespace PMS.Infrastructure.DataAccess.Model
     {
         public int p_id { get; set; }
         public int p_code { get; set; }
+        public int p_mgrid { get; set; }
         public SqlHierarchyId p_hid { get; set; }
         public string p_name { get; set; }
         public Int16 p_lvl { get; set; }
