@@ -1,6 +1,5 @@
 ﻿
-CREATE PROC [dbo].[Report] 
- @p_startdate AS DATE = '2008-01-01', @p_finishdate AS DATE = '2008-12-31'
+CREATE PROC [dbo].[Report]  
 
 AS
 BEGIN
@@ -8,7 +7,8 @@ BEGIN
  SET XACT_ABORT ON;  
  
  DECLARE @temp dbo.MemoryReportTable;
- DECLARE @p_id AS INT, @p_name AS VARCHAR(25), @p_lvl AS INT, @p_code AS INT 
+ DECLARE @p_id AS INT, @p_name AS VARCHAR(25), @p_lvl AS INT, @p_code AS INT, 
+ @p_startdate AS DATE = '2008-01-01', @p_finishdate AS DATE = '2008-12-31'
 
  DECLARE @t_id AS INT, @t_name AS VARCHAR(25), @t_lvl AS INT ,
  @t_startdate AS DATE, @t_finishdate AS DATE, @t_state AS INT,
@@ -44,7 +44,7 @@ BEGIN
        SET @p_state = 'Planned';
            
        INSERT INTO @temp (p_id, p_code, p_name, p_lvl, p_startdate, p_finishdate,p_state) 
-              VALUES(@p_id, @p_code, @t_name, @p_lvl, @p_startdate, @p_finishdate, @p_state)                        
+              VALUES(@p_id, @p_code, @p_name, @p_lvl, @p_startdate, @p_finishdate, @p_state)                        
      
   SET @inner_cursor  = CURSOR STATIC LOCAL FOR
     SELECT t_id,
@@ -61,8 +61,8 @@ BEGIN
  SET @fetch_inner_cursor = @@FETCH_STATUS
  WHILE @fetch_inner_cursor = 0
      BEGIN      
-      INSERT INTO @temp (t_id, t_name, t_description, t_lvl, t_startdate, t_finishdate,t_state) 
-             VALUES(@t_id, @t_name,@t_description, @t_lvl, @t_startdate, @t_finishdate, @t_state)    
+      INSERT INTO @temp (p_id, t_id, t_name, t_description, t_lvl, t_startdate, t_finishdate,t_state) 
+             VALUES(@p_id, @t_id, @t_name,@t_description, @t_lvl, @t_startdate, @t_finishdate, @t_state)    
                 
      FETCH NEXT FROM @inner_cursor into @t_id, @t_name, @t_description, @t_lvl, @t_startdate, @t_finishdate,@t_state
      SET @fetch_inner_cursor = @@FETCH_STATUS   

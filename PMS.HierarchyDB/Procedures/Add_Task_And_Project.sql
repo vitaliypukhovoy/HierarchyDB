@@ -8,7 +8,7 @@ AS
              @Identity AS INT, @t_state AS INT = 0,
              @t_name AS INT = NULL
           
-    IF @p_mgrid IS NULL  
+    IF @p_mgrid = 0  
       IF(NOT EXISTS(SELECT 1 FROM dbo.Projects))
         SET @p_hid = hierarchyid::GetRoot().GetDescendant(NULL,NULL);
       ELSE
