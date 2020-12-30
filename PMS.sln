@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMS.Infrastructure", "PMSIn
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PMS.HierarchyDB", "PMS.HierarchyDB\PMS.HierarchyDB.sqlproj", "{42ACA784-4248-46E3-A990-BFE8FDE56161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS.Infrastructure.IoC", "PMS.Infrastructure.IoC\PMS.Infrastructure.IoC.csproj", "{AFBB6886-D20F-4319-9D06-8B48D1BCAD0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMS.Infrastructure.IoC", "PMS.Infrastructure.IoC\PMS.Infrastructure.IoC.csproj", "{AFBB6886-D20F-4319-9D06-8B48D1BCAD0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS.WebAPI", "PMS.WebAPI\PMS.WebAPI.csproj", "{CD8CA3FE-DF69-4878-8D94-9B6FE91C7E7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PMS.WebAPI", "PMS.WebAPI\PMS.WebAPI.csproj", "{CD8CA3FE-DF69-4878-8D94-9B6FE91C7E7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PMS.UnitTest", "PMS.UnitTest\PMS.UnitTest.csproj", "{4A10D22D-178F-4FD2-985C-0322A9559648}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{CD8CA3FE-DF69-4878-8D94-9B6FE91C7E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD8CA3FE-DF69-4878-8D94-9B6FE91C7E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD8CA3FE-DF69-4878-8D94-9B6FE91C7E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A10D22D-178F-4FD2-985C-0322A9559648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A10D22D-178F-4FD2-985C-0322A9559648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A10D22D-178F-4FD2-985C-0322A9559648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A10D22D-178F-4FD2-985C-0322A9559648}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

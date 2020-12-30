@@ -27,7 +27,7 @@ namespace PMS.WebAPI.Controllers
 
             try
             {
-                var data = await _repo.GetAllAsync(); ;
+                var data = await _repo.GetAllAsync();
                 return Ok(data);
             }
             catch (Exception ex)
@@ -42,6 +42,13 @@ namespace PMS.WebAPI.Controllers
         public async Task<ActionResult> Get(int id)
         {
             ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();
+
+            if (id == 0)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.Errors.Add(1, ModelState);
+                return BadRequest(returnResponse);
+            }
 
             try
             {
@@ -61,6 +68,13 @@ namespace PMS.WebAPI.Controllers
         public async Task<ActionResult> Create([FromBody] TaskData data)
         {
             ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();
+            if (!ModelState.IsValid)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.Errors.Add(1, ModelState);
+                return BadRequest(returnResponse);
+            }
+
             var spParms = new DynamicParameters();
             spParms.Add("p_id", data.p_id, DbType.Int32);
             spParms.Add("t_name", data.t_name, DbType.String);
@@ -86,6 +100,13 @@ namespace PMS.WebAPI.Controllers
         public async Task<ActionResult> Put(int id, [FromBody] Tasks data)
         {
             ResponseModel<Tasks> returnResponse = new ResponseModel<Tasks>();
+            if (!ModelState.IsValid)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.Errors.Add(1, ModelState);
+                return BadRequest(returnResponse);
+            }
+
             var spParms = new DynamicParameters();
             spParms.Add("Id", id, DbType.Int32);
             spParms.Add("name", data.t_name, DbType.String);
@@ -109,6 +130,12 @@ namespace PMS.WebAPI.Controllers
         public async Task<ActionResult> Delete(int id)
         {
             ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();
+            if (id == 0)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.Errors.Add(1, ModelState);
+                return BadRequest(returnResponse);
+            }
 
             var spParms = new DynamicParameters();
             spParms.Add("Id", id, DbType.Int32);

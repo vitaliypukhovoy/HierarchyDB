@@ -64,7 +64,6 @@
     <Build Include="Tables\Projects.sql" />
     <Build Include="Tables\Tasks.sql" />
     <PostDeploy Include="Procedures\Add_Task.sql" />
-    <None Include="Procedures\DeleteOneProjectContainsAllTasks.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Hierarchy.DB.publish.xml" />

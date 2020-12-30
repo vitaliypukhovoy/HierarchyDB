@@ -42,6 +42,13 @@ namespace PMS.WebAPI.Controllers
         {
             ResponseModel<ProjectData> returnResponse = new ResponseModel<ProjectData>();
 
+            if (id == 0)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.Errors.Add(1, ModelState);
+                return BadRequest(returnResponse);
+            }
+
             try
             {
                 var data = await _repo.GetAsync(id, "p_id");
@@ -59,6 +66,13 @@ namespace PMS.WebAPI.Controllers
         public async Task<ActionResult> Create([FromBody] ProjectData data)
         {
             ResponseModel<ProjectData> returnResponse = new ResponseModel<ProjectData>();
+            if (!ModelState.IsValid)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.Errors.Add(1, ModelState);
+                return BadRequest(returnResponse);
+            }
+
             var spParms = new DynamicParameters();
             spParms.Add("p_code", data.p_code, DbType.Int32);
             spParms.Add("p_mgrid", data.p_mgrid, DbType.Int32);
@@ -85,6 +99,13 @@ namespace PMS.WebAPI.Controllers
         public async Task<ActionResult> Put(int id, [FromBody] Projects data)
         {
             ResponseModel<Projects> returnResponse = new ResponseModel<Projects>();
+            if (!ModelState.IsValid)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.Errors.Add(1, ModelState);
+                return BadRequest(returnResponse);
+            }
+
             var spParms = new DynamicParameters();
             spParms.Add("Id", id, DbType.Int32);
             spParms.Add("name", data.p_name, DbType.String);
@@ -107,6 +128,12 @@ namespace PMS.WebAPI.Controllers
         public async Task<ActionResult> Delete(int id)
         {
             ResponseModel<ProjectData> returnResponse = new ResponseModel<ProjectData>();
+            if (id == 0)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.Errors.Add(1, ModelState);
+                return BadRequest(returnResponse);
+            }
 
             try
             {

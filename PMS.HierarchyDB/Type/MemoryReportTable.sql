@@ -12,6 +12,6 @@
     [t_lvl]         INT          NULL,
     [t_startdate]   DATE         NULL,
     [t_finishdate]  DATE         NULL,
-    [t_state]       INT          NULL,
+    [t_state]       VARCHAR (10) NULL,
     INDEX [MemoryReportTable] ([p_id]));
 
