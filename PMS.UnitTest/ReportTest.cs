@@ -23,8 +23,8 @@ namespace PMS.UnitTest
             var mockRepo = new Mock<IRepository<MemoryReportTable>>();
             var mockExcel = new Mock<IExportToExcel>();
 
-            //mockRepo.Setup(repo => repo.GetAsync(null, null, CommandType.StoredProcedure))
-            //                            .Throws<InvalidOperationException>();
+           // mockRepo.Setup(repo => repo.GetAsync(null, null, CommandType.StoredProcedure))
+           //                             .Throws<InvalidOperationException>();
             mockRepo.Setup(repo => repo.GetAsync(null, null, CommandType.StoredProcedure))
                     .Returns(Task.Factory.StartNew(() => GetTestMemoryReportTable()));
 
@@ -45,12 +45,10 @@ namespace PMS.UnitTest
 
             Assert.IsNotNull(result);
             Assert.IsInstanceOf<Task<ActionResult>>(result);
-            Assert.IsAssignableFrom<Task<ActionResult>>(result);       
+            Assert.IsAssignableFrom<Task<ActionResult>>(result);
             Assert.IsInstanceOf<Task<FileContentResult>>(Task.FromResult(FileContentResult()), "Expected a FileResult");
 
         }
-
-
 
         public FileContentResult FileContentResult()
         {
@@ -61,7 +59,6 @@ namespace PMS.UnitTest
                         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                         "users.xlsx");
         }
-
 
         private IEnumerable<MemoryReportTable> GetTestMemoryReportTable()
         {

@@ -6,7 +6,6 @@ using System;
 using System.Data;
 using System.Threading.Tasks;
 
-
 namespace PMS.WebAPI.Controllers
 {
     [Route("api/[controller]")]
@@ -92,8 +91,6 @@ namespace PMS.WebAPI.Controllers
                 return BadRequest(returnResponse);
             }
         }
-
-
 
         [HttpPut("{id}")]
         public async Task<ActionResult> Put(int id, [FromBody] Projects data)

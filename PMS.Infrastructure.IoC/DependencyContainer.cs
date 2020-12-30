@@ -16,7 +16,7 @@ namespace PMS.Infrastructure.IoC
                     options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
 
-            services.AddTransient<IExportToExcel, ExportToExcel>((_)=> new ExportToExcel());
+            services.AddTransient<IExportToExcel, ExportToExcel>();
 
             services.AddTransient<IRepository<Projects>, Repository<Projects>>((_) => new Repository<Projects>(Configuration, "Projects"));
 

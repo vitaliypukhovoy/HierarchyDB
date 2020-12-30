@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Dapper;
+using Microsoft.AspNetCore.Mvc;
 using PMS.Infrastructure.DataAccess.Export;
 using PMS.Infrastructure.DataAccess.Model;
 using PMS.Infrastructure.DataAccess.Repo;
@@ -21,14 +22,27 @@ namespace PMS.WebAPI.Controllers
             _export = export;
         }
 
+        // query string report?startDate= 1-12-2000&finishDate= 12-12-2012
         [HttpGet]
-        public async Task<ActionResult> GetAsync()
+        public async Task<ActionResult> GetAsync([FromQuery] ProjectReport projectReport)
         {
             ResponseModel<ProjectReport> returnResponse = new ResponseModel<ProjectReport>();
 
+            if (!ModelState.IsValid)
+            {
+                returnResponse.ReturnStatus = false;
+                returnResponse.Errors.Add(1, ModelState);
+                return BadRequest(returnResponse);
+            }
+
+
+            var spParms = new DynamicParameters();
+            spParms.Add("p_startdate", projectReport.startDate, DbType.Date);
+            spParms.Add("p_finishdate", projectReport.finishDate, DbType.Date);
+
             try
             {
-                var data = await _repo.GetAsync("[dbo].[Report]", null, commandType: CommandType.StoredProcedure);
+                var data = await _repo.GetAsync("[dbo].[Report]", spParms, commandType: CommandType.StoredProcedure);
                 return await _export.Export(data);
             }
             catch (Exception ex)

@@ -6,7 +6,6 @@ using System;
 using System.Data;
 using System.Threading.Tasks;
 
-
 namespace PMS.WebAPI.Controllers
 {
 
@@ -123,8 +122,6 @@ namespace PMS.WebAPI.Controllers
                 return BadRequest(returnResponse);
             }
         }
-
-
 
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
