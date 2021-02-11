@@ -24,6 +24,7 @@ namespace PMS.WebAPI.Controllers
 
         // query string report?startDate= 1-12-2000&finishDate= 12-12-2012
         [HttpGet]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> GetAsync([FromQuery] ProjectReport projectReport)
         {
             ResponseModel<ProjectReport> returnResponse = new ResponseModel<ProjectReport>();

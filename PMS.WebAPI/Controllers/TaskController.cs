@@ -38,6 +38,7 @@ namespace PMS.WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Get(int id)
         {
             ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();
@@ -64,6 +65,7 @@ namespace PMS.WebAPI.Controllers
 
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([FromBody] TaskData data)
         {
             ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();
@@ -96,6 +98,7 @@ namespace PMS.WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Put(int id, [FromBody] Tasks data)
         {
             ResponseModel<Tasks> returnResponse = new ResponseModel<Tasks>();
@@ -124,6 +127,7 @@ namespace PMS.WebAPI.Controllers
         }
 
         [HttpDelete("{id}")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(int id)
         {
             ResponseModel<TaskData> returnResponse = new ResponseModel<TaskData>();

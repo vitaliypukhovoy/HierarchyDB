@@ -18,7 +18,7 @@ namespace PMS.WebAPI.Controllers
             _repo = repo;
         }
 
-        [HttpGet]
+        [HttpGet]        
         public async Task<ActionResult> Get()
         {
             ResponseModel<ProjectData> returnResponse = new ResponseModel<ProjectData>();
@@ -37,6 +37,7 @@ namespace PMS.WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Get(int id)
         {
             ResponseModel<ProjectData> returnResponse = new ResponseModel<ProjectData>();
@@ -62,6 +63,7 @@ namespace PMS.WebAPI.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([FromBody] ProjectData data)
         {
             ResponseModel<ProjectData> returnResponse = new ResponseModel<ProjectData>();
@@ -93,6 +95,7 @@ namespace PMS.WebAPI.Controllers
         }
 
         [HttpPut("{id}")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Put(int id, [FromBody] Projects data)
         {
             ResponseModel<Projects> returnResponse = new ResponseModel<Projects>();
@@ -122,6 +125,7 @@ namespace PMS.WebAPI.Controllers
 
 
         [HttpDelete("{id}")]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> Delete(int id)
         {
             ResponseModel<ProjectData> returnResponse = new ResponseModel<ProjectData>();

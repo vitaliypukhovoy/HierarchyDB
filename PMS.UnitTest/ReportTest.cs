@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Moq;
+using NUnit.Framework;
 using PMS.Infrastructure.DataAccess.Export;
 using PMS.Infrastructure.DataAccess.Model;
 using PMS.Infrastructure.DataAccess.Repo;
@@ -7,9 +8,8 @@ using PMS.WebAPI.Controllers;
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Threading.Tasks;
-using NUnit.Framework;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace PMS.UnitTest
 {
@@ -17,7 +17,7 @@ namespace PMS.UnitTest
     public class ReportTest : ControllerBase
     {
         [Test]
-        public void ReportController()
+        public async Task ReportControllerAsync()
         {
 
             var mockRepo = new Mock<IRepository<MemoryReportTable>>();
@@ -40,7 +40,9 @@ namespace PMS.UnitTest
 
 
             var controller = new ReportController(mockRepo.Object, mockExcel.Object);
-            var result = controller.GetAsync();
+
+            ProjectReport query = new ProjectReport { startDate = "1 - 12 - 2000", finishDate = "12 - 12 - 2012" };
+            var result = await controller.GetAsync(query);
 
 
             Assert.IsNotNull(result);
