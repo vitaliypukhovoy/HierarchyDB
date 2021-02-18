@@ -1,4 +1,5 @@
-﻿
+﻿USE PMSHierarchyDB;
+GO
 CREATE PROC [dbo].[Create_MemoryReportTable]
 AS
 BEGIN

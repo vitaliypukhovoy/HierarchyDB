@@ -1,7 +1,9 @@
 ﻿using Dapper;
 using Microsoft.AspNetCore.Mvc;
+using PMS.Infrastructure.DataAccess.Context;
 using PMS.Infrastructure.DataAccess.Model;
 using PMS.Infrastructure.DataAccess.Repo;
+using PMS.Infrastructure.IoC;
 using System;
 using System.Data;
 using System.Threading.Tasks;

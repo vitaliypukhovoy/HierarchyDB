@@ -1,14 +1,18 @@
 version: "3"
 services:
   web:
-    container_name: PMS.WebAPI
+    container_name: pms-webapi
     build: 
-      dockerfile: Dockerfile
-      context: PMS.WebAPI
+      context: .
+      dockerfile: PMS.WebAPI/Dockerfile 
+   # network_mode: host      
     ports:
-      - "8008:80"
+      - "8080:80"
+    networks:
+      - default
     environment:
-      ConnectionStrings__ProductsContext: "Server=db;Database=ProductsContext;User=sa;Password=@Aa123456;"
+ 
+        ConnectionStrings__DefaultConnection: "Server= mssql-db,1433;Database=PMSHierarchyDB; User=sa;Password=@Aa123456;Trusted_Connection=False;"        
     depends_on:
       - db
 
@@ -17,8 +21,30 @@ services:
     image: "mcr.microsoft.com/mssql/server:2019-CU4-ubuntu-16.04" #"microsoft/mssql-server-linux"
     expose:
       - "1433"
+    ports:
+      - "1433:1433"
+    networks:
+      - default  
     environment:
       SA_PASSWORD: "@Aa123456"
       ACCEPT_EULA: "Y"
-    ports:
-      - "1433:1433"
+      
+    volumes:
+       # directory with sql script on pc to /scripts/
+       - ./PMS.HierarchyDB/CreateDB:/createdb/
+       - ./PMS.HierarchyDB/Script:/scripts/      
+    command:
+        - /bin/bash
+        - -c 
+        - |          
+          /opt/mssql/bin/sqlservr &          
+          sleep 30          
+          /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P @Aa123456 -l 30 -e -i /createdb/Setup.sql          
+          for foo in /scripts/*.sql
+          do /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P @Aa123456 -l 30 -e -i $$foo          
+          done         
+          sleep infinity
+
+
+      
+      

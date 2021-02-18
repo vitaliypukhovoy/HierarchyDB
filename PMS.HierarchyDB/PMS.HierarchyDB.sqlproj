@@ -60,18 +60,25 @@
     <Folder Include="Procedures" />
     <Folder Include="Type" />
     <Folder Include="Function" />
+    <Folder Include="CreateDB" />
+    <Folder Include="Script" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Projects.sql" />
-    <Build Include="Tables\Tasks.sql" />
-    <PostDeploy Include="Procedures\Add_Task.sql" />
+    <PostDeploy Include="Script\Add_Task.sql" />
+    <None Include="Script\Add_Task_And_Project.sql" />
+    <None Include="Script\Create_MemoryReportTable_.sql" />
+    <None Include="Script\Report.sql" />
+    <None Include="Script\Projects.sql" />
+    <None Include="Script\Tasks.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Hierarchy.DB.publish.xml" />
-    <None Include="Procedures\Report.sql" />
-    <None Include="Procedures\Create_MemoryReportTable_.sql" />
-    <None Include="Procedures\Add_Task_And_Project.sql" />
-    <None Include="TYpe\MemoryReportTable.sql" />
-    <None Include="Function\getStateProject.sql" />
+    <None Include="CreateDB\Setup.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Script\MemoryReportTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Script\getStateProject.sql" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,6 @@
-﻿CREATE FUNCTION dbo.getStateProject (@p_id INT)
+﻿USE PMSHierarchyDB;
+GO
+CREATE FUNCTION dbo.getStateProject (@p_id INT)
 RETURNS int
 WITH EXECUTE AS CALLER
 AS

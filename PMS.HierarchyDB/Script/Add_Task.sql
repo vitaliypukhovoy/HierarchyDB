@@ -1,4 +1,9 @@
-﻿
+﻿USE PMSHierarchyDB;
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE PROC dbo.Add_Task
   @p_id AS INT, @t_mgrid AS INT,  
   @t_name AS VARCHAR(25)= 'sub task 1', 

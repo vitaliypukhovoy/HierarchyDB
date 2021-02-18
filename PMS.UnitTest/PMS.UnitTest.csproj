@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PMS.Infrastructure\PMS.Infrastructure.csproj" />
     <ProjectReference Include="..\PMS.WebAPI\PMS.WebAPI.csproj" />
-    <ProjectReference Include="..\PMSInfrastructure\PMS.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

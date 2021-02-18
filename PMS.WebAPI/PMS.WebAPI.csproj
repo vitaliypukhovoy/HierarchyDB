@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>c08d9c1b-f8a9-4690-aab6-d0b4acb6c0dd</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,7 +30,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PMS.Infrastructure.IoC\PMS.Infrastructure.IoC.csproj" />
-    <ProjectReference Include="..\PMSInfrastructure\PMS.Infrastructure.csproj" />
+    <ProjectReference Include="..\PMS.Infrastructure\PMS.Infrastructure.csproj" />
   </ItemGroup>
 
 

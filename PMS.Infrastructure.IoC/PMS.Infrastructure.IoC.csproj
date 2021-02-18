@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PMSInfrastructure\PMS.Infrastructure.csproj" />
+    <ProjectReference Include="..\PMS.Infrastructure\PMS.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

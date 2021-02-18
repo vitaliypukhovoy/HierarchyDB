@@ -1,4 +1,9 @@
-﻿
+﻿USE PMSHierarchyDB;
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
 CREATE PROC dbo.Add_Task_And_Project
   @p_code AS INT, @p_mgrid AS INT = 0, @p_name AS VARCHAR(25) = "Project 1",
   @p_startdate AS DATE = '2008-01-01', @p_finishdate AS DATE = '2008-12-31'

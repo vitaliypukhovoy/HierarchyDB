@@ -24,7 +24,7 @@ namespace PMS.Infrastructure.IoC
 
             services.AddTransient<IRepository<MemoryReportTable>, Repository<MemoryReportTable>>((_) => new Repository<MemoryReportTable>(Configuration, "MemoryReportTable"));
 
-            services.AddTransient<PMSContext>();
+            //services.AddTransient<PMSContext>();
         }
     }
 }

@@ -20,15 +20,15 @@ namespace PMS.WebAPI
         {
             services.AddControllers();
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
-                {
-                    Version = "v1",
-                    Title = "Test API ",
-                    Description = "PMS project"
-                });
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+            //    {
+            //        Version = "v1",
+            //        Title = "Test API ",
+            //        Description = "PMS project"
+            //    });
+            //});
 
             RegisterServices(services, Configuration);
         }
@@ -50,14 +50,16 @@ namespace PMS.WebAPI
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "{controller}/{action}/{id?}");
+                //endpoints.MapControllerRoute("default", "{controller}/{action}/{id?}");
+                endpoints.MapControllers();
             });
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Test API V1");
-            });
+
+            //app.UseSwagger();
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Test API V1");
+            //});
         }
     }
 }
