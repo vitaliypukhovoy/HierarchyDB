@@ -27,9 +27,10 @@
    command: http://localhost:8080/api/Project 
   
    "Project"
+   
    {
-   "p_code" : 21212,
-   "p_mgrid" : 0,                      //id: 1,2,3 for subproject
+    "p_code" : 21212,
+    "p_mgrid" : 0,                      //id: 1,2,3 for subproject
     "p_name" : "Sub Project",
     "p_startdate" : "2008-01-01",
      "p_finishdate" :  "2008-01-01"
@@ -47,8 +48,9 @@
    command: http://localhost:8080/api/Task
 
    "Task"
-   {
-   "p_id" : 1,
+  
+  {
+    "p_id" : 1,
     "t_mgrid" : 1,                     // need to specify this id for parent Task
     "t_name" : "Sub Project",
     "t_startdate" : "2008-01-01",
