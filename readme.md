@@ -57,7 +57,7 @@
      "t_finishdate" :  "2008-01-01"
     }
 
-   4. The main part of this challenge implemented in Controler ReportController and sql script Report.
+4. The main part of this challenge implemented in Controler ReportController and sql script Report.
    In Report script was implemented logic of report.
    ReportController use Get query we are using it can get Report in xlsx format.
    command: http://localhost:8080/api/Report
