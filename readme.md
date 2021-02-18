@@ -1,5 +1,5 @@
 
-                                      DOCUMENATION
+                                              DOCUMENATION
 
 1. For realize this chellange was chosen .net Core 3.1 Framework and
    for connection to Database I have used Dapper Framework 
