@@ -55,7 +55,7 @@
     }
 
 4. The main part of this challenge implemented in Controler ReportController and sql script Report.
-   In Report script was implemented logic of report.
+   In Report script was fuced all logic of report.
    ReportController use Get query we are using it can get Report in xlsx format.
    command: http://localhost:8080/api/Report
 
