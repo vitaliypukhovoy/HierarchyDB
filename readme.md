@@ -1,5 +1,5 @@
 
-                                              DOCUMENATION
+                                             ##DOCUMENATION
                        (soon will be implemented deploy on kubernetes and Azure)
 
 1. For realize this chellange was chosen .net Core 3.1 Framework and  
@@ -23,8 +23,6 @@
     After this actions will be formed two "image" and two "runnung" containers which builded as "image" and running as "container":  
       a. pms-web - where is located  webapi application( inclided 3 projects)  
       b. mssql-db - mssql Server for linux container   
-      
-
 
 3. To run this Project need to run PMS.WebAPI subproject.  
    Primarily I am using Fiddler for debugging CRUD and other query to App.   
@@ -38,7 +36,7 @@
     "p_mgrid" : 0,//id: 1,2,3 for subproject  
     "p_name" : "Sub Project",  
     "p_startdate" : "2008-01-01",  
-     "p_finishdate" :  "2008-01-01" c
+     "p_finishdate" :  "2008-01-01"  
    }  
 
    "p_mgrid" - this is interesting field in query.  
@@ -57,7 +55,7 @@
     "t_mgrid" : 1,// need to specify this id for parent Task  
     "t_name" : "Sub Project",  
     "t_startdate" : "2008-01-01",  
-     "t_finishdate" :  "2008-01-01" c
+     "t_finishdate" :  "2008-01-01"  
     }  
 
 4. The main part of this challenge implemented in Controler ReportController and sql script Report.  
