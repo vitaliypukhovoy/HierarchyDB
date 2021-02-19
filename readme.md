@@ -24,7 +24,7 @@
    Here was realized all CRUD operations.  
 
    For example  __POST__ body of query to Project controllers  
-    ```command: http://localhost:8080/api/Project?startDate=1-12-2000&finishDate=12-12-2012```
+   ```command: http://localhost:8080/api/Project```  
    ```POST```
    ```
    {     
@@ -60,7 +60,8 @@
    4. The main part of this challenge implemented in Controler ReportController and sql script Report.  
    In Report script was fuced all logic of report.  
    ReportController use Get query we are using it can get Report in xlsx format.  
-   ```command: http://localhost:8080/api/Report``` ```GET```
+   command: http://localhost:8080/api/Report?startDate=1-12-2000&finishDate=12-12-2012
+   ```GET```
 
    :package:  planning to do
  
