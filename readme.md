@@ -29,9 +29,9 @@
    Here was realized all CRUD operations.  
 
    For example  __POST__ body of query to Project and Task controllers  
-   ```command: http://localhost:8080/api/Project```  
-   **POST** 
-   
+   ```command: http://localhost:8080/api/Project``` 
+   ```POST```
+   ```
    {  
     "p_code" : 21212,  
     "p_mgrid" : 0,   //id: 1,2,3 for subproject  
@@ -39,20 +39,19 @@
     "p_startdate" : "2008-01-01",  
      "p_finishdate" :  "2008-01-01"  
    } 
-   
-   
+   ```  
    "p_mgrid" - this is interesting field in query.  
     When "p_mgrid" = 0 we can create individual Projects independet from each other.  
     And when we indicate here number of other project then will be created new subproject which  erlier indicated. nn
     This an aproach  also implemented in POST Tasks query for creating new subtasks.  
 
-    a.After ctreating  of new Project  will be also created  new task realated  with  parent project.  
+   a. After ctreating  of new Project  will be also created  new task realated  with  parent project.  
     
-    b.And when we want to create new task we specify in "t_mgrid" id task which has already been created and have new subtask  
+   b. And when we want to create new task we specify in "t_mgrid" id task which has already been created and have new subtask  
     
    ```command: http://localhost:8080/api/Task```
   
-   **POST**
+   ``POST``
     ```
    {  
     "p_id" : 1,  
