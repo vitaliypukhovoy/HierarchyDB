@@ -33,7 +33,7 @@
    POST  
    {  
     "p_code" : 21212,  
-    "p_mgrid" : 0,//id: 1,2,3 for subproject  
+    "p_mgrid" : 0,   //id: 1,2,3 for subproject  
     "p_name" : "Sub Project",  
     "p_startdate" : "2008-01-01",  
      "p_finishdate" :  "2008-01-01"  
@@ -52,7 +52,7 @@
    POST  
    {  
     "p_id" : 1,  
-    "t_mgrid" : 1,// need to specify this id for parent Task  
+    "t_mgrid" : 1,  // need to specify this id for parent Task  
     "t_name" : "Sub Project",  
     "t_startdate" : "2008-01-01",  
      "t_finishdate" :  "2008-01-01"  
