@@ -1,5 +1,5 @@
 
-                                            ~~DOCUMENATION~~
+                                             __DOCUMENATION__
                        (soon will be implemented deploy on kubernetes and Azure)
 
 1. For realize this chellange was chosen .net Core 3.1 Framework and  
