@@ -42,10 +42,9 @@
     This an aproach  also implemented in POST Tasks query for creating new subtasks.  
 
    ***a. After ctreating  of new Project  will be also created  new task realated  with  parent project.*** 
-    
    ***b. And when we want to create new task we specify in "t_mgrid" id task which has already been created and have new subtask.***  
     
-    For example  __POST__ body of query to Task controllers 
+   For example  __POST__ body of query to Task controllers 
    ```command: http://localhost:8080/api/Task```
    ```POST```
    ```
