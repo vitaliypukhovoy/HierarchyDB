@@ -1,14 +1,13 @@
 
-                                             __DOCUMENATION__
-                       (soon will be implemented deploy on kubernetes and Azure)
-
-1. For realize this chellange was chosen .net Core 3.1 Framework and  
+                       __(soon will be implemented deploy on kubernetes and Azure)__
+   
+   1. For realize this chellange was chosen .net Core 3.1 Framework and  
    for connection to Database I have used Dapper Framework  
    This is give me to do query directly.  
    Main logic of report was developed on server side (MSSQL server)  
    I desided on to the maximum using sql scripts for better performence.  
    In project was used CRUD an approach.  
-
+  
 2. Project was divided on 5 subprojects. 
    in order to deploy local this test project need to open PMS.HierarchyDB.  
    To  check of deploying scripts we can open SQL Server and run Hierarchy.DB.publish.xml (PMS.HierarchyDB project)  
