@@ -32,14 +32,15 @@
    ```command: http://localhost:8080/api/Project``` 
    ```POST```
    ```
-   {  
-    "p_code" : 21212,  
-    "p_mgrid" : 0,   //id: 1,2,3 for subproject  
-    "p_name" : "Sub Project",  
-    "p_startdate" : "2008-01-01",  
-     "p_finishdate" :  "2008-01-01"  
+   {     
+    "p_code" : 21212,    
+    "p_mgrid" : 0,   //id: 1,2,3 for subproject    
+    "p_name" : "Sub Project",    
+    "p_startdate" : "2008-01-01",    
+    "p_finishdate" :  "2008-01-01"      
    } 
-   ```  
+   ```
+     
    "p_mgrid" - this is interesting field in query.  
     When "p_mgrid" = 0 we can create individual Projects independet from each other.  
     And when we indicate here number of other project then will be created new subproject which  erlier indicated. nn
@@ -50,22 +51,21 @@
    b. And when we want to create new task we specify in "t_mgrid" id task which has already been created and have new subtask  
     
    ```command: http://localhost:8080/api/Task```
-  
-   ``POST``
-    ```
-   {  
-    "p_id" : 1,  
-    "t_mgrid" : 1,  // need to specify this id for parent Task    
-    "t_name" : "Sub Project",    
-    "t_startdate" : "2008-01-01",    
-     "t_finishdate" :  "2008-01-01"    
-    }  
-     ```
+   ``POST```
    
- 4. The main part of this challenge implemented in Controler ReportController and sql script Report.  
+   {    
+    "p_id" : 1,    
+    "t_mgrid" : 1,  // need to specify this id for parent Task      
+    "t_name" : "Sub Project",      
+    "t_startdate" : "2008-01-01",      
+     "t_finishdate" :  "2008-01-01"      
+    }    
+     
+     
+   4. The main part of this challenge implemented in Controler ReportController and sql script Report.  
    In Report script was fuced all logic of report.  
    ReportController use Get query we are using it can get Report in xlsx format.  
-  ´´´ command: **http://localhost:8080/api/Report** ´´´
+  ´´´ command: http://localhost:8080/api/Report ´´´
 
 
    :package:  planning to do
