@@ -15,10 +15,10 @@
    to create PMSHierarchyDB in local Database.  
   
    To  deploy of Docker container need to run docker-compose.yaml file in root of project:  
-   command docker-compose up --build.  
+   command **docker-compose up --build**.  
    After first build of "docker-compose" will be created two Docker container so  
    next time will need to run command:   
-   command docker-compose up  
+   command **docker-compose up**  
   
     After this actions will be formed two "image" and two "runnung" containers which builded as "image" and running as "container":  
       a. pms-web - where is located  webapi application( inclided 3 projects)  
@@ -28,9 +28,9 @@
    Primarily I am using Fiddler for debugging CRUD and other query to App.   
    Here was realized all CRUD operations.  
 
-   For example  POST body of query to Project and Task controllers  
-   ```command: http://localhost:8080/api/Project  
-   POST 
+   For example  **POST** body of query to Project and Task controllers  
+   ```command: http://localhost:8080/api/Project```  
+   **POST** 
    
    {  
     "p_code" : 21212,  
@@ -39,8 +39,8 @@
     "p_startdate" : "2008-01-01",  
      "p_finishdate" :  "2008-01-01"  
    } 
-    ```
-  
+   
+   
    "p_mgrid" - this is interesting field in query.  
     When "p_mgrid" = 0 we can create individual Projects independet from each other.  
     And when we indicate here number of other project then will be created new subproject which  erlier indicated. nn
@@ -50,8 +50,9 @@
     
     b.And when we want to create new task we specify in "t_mgrid" id task which has already been created and have new subtask  
     
-    ``` command: http://localhost:8080/api/Task  ```
-    ``` POST  ```
+   ```command: http://localhost:8080/api/Task```
+  
+   **POST**
     ```
    {  
     "p_id" : 1,  
@@ -60,15 +61,19 @@
     "t_startdate" : "2008-01-01",  
      "t_finishdate" :  "2008-01-01"  
     }  
-    ```
-4. The main part of this challenge implemented in Controler ReportController and sql script Report.  
+     ```
+   
+ 4. The main part of this challenge implemented in Controler ReportController and sql script Report.  
    In Report script was fuced all logic of report.  
    ReportController use Get query we are using it can get Report in xlsx format.  
-   ```command: http://localhost:8080/api/Report  ```
+  ´´´ command: **http://localhost:8080/api/Report** ´´´
 
 
-:package:  planning to do
- ```
-5. Unwraping Kubernetes, deploy microservices and deploying to Azure AKS
+   :package:  planning to do
  
-```
+ 5. Unwraping Kubernetes, deploy microservices and deploying to Azure AKS
+    
+    
+  
+ 
+
