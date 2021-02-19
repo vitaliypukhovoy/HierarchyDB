@@ -1,5 +1,5 @@
 .                                   ***DOCUMENTATION***
-                       _(soon will be implemented deploy on kubernetes and Azure)_
+                       *(soon will be implemented deploy on kubernetes and Azure)*
    
    :white_check_mark: this is have done
    
