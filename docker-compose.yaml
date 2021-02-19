@@ -43,7 +43,7 @@ services:
           for foo in /scripts/*.sql
           do /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P @Aa123456 -l 30 -e -i $$foo          
           done         
-          sleep infinity
+           #sleep infinity
 
 
       
