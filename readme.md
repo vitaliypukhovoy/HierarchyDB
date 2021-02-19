@@ -28,7 +28,7 @@
    Primarily I am using Fiddler for debugging CRUD and other query to App.   
    Here was realized all CRUD operations.  
 
-   For example  **POST** body of query to Project and Task controllers  
+   For example  __POST__ body of query to Project and Task controllers  
    ```command: http://localhost:8080/api/Project```  
    **POST** 
    
@@ -56,10 +56,10 @@
     ```
    {  
     "p_id" : 1,  
-    "t_mgrid" : 1,  // need to specify this id for parent Task  
-    "t_name" : "Sub Project",  
-    "t_startdate" : "2008-01-01",  
-     "t_finishdate" :  "2008-01-01"  
+    "t_mgrid" : 1,  // need to specify this id for parent Task    
+    "t_name" : "Sub Project",    
+    "t_startdate" : "2008-01-01",    
+     "t_finishdate" :  "2008-01-01"    
     }  
      ```
    
