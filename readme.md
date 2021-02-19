@@ -4,13 +4,10 @@
    :white_check_mark: this is have done
    
    1. For realize this chellange was chosen .net Core 3.1 Framework and for connection to Database I have used Dapper Framework   
-   This is give me to do query directly.  
-   Main logic of report was developed on server side (MSSQL server)  
-   I desided on to the maximum using sql scripts for better performence.  
-   In project was used CRUD an approach.  
+   This is give me to do query directly. Main logic of report was developed on server side (MSSQL server)  
+   I desided on to the maximum using sql scripts for better performence. In project was used CRUD an approach.  
   
-   2. Project was divided on 5 subprojects.  
-   in order to deploy local this project need to open PMS.HierarchyDB.  
+   2. Project was divided on 5 subprojects. In order to deploy local this project need to open PMS.HierarchyDB.  
    To  check of deploying scripts we can open SQL Server and run Hierarchy.DB.publish.xml (PMS.HierarchyDB project)  
    to create PMSHierarchyDB in local Database.  
   
@@ -32,7 +29,7 @@
    ```
    {     
     "p_code" : 21212,    
-    "p_mgrid" : 0,   //id: 1,2,3 for subproject    
+    "p_mgrid" : 0,                                     //id: 1,2,3 for subproject    
     "p_name" : "Sub Project",    
     "p_startdate" : "2008-01-01",    
     "p_finishdate" :  "2008-01-01"      
@@ -53,7 +50,7 @@
    ```
    {    
     "p_id" : 1,    
-    "t_mgrid" : 1,  // need to specify this id for parent Task      
+    "t_mgrid" : 1,                                     // need to specify this id for parent Task      
     "t_name" : "Sub Project",      
     "t_startdate" : "2008-01-01",      
      "t_finishdate" :  "2008-01-01"      
