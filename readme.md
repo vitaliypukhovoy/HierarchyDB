@@ -1,5 +1,7 @@
-...                                   ***DOCUMENTATION***
+.                                   ***DOCUMENTATION***
                        ___(soon will be implemented deploy on kubernetes and Azure)___
+   
+   :white_check_mark: this is have done
    
    1. For realize this chellange was chosen .net Core 3.1 Framework and  
    for connection to Database I have used Dapper Framework  
@@ -63,5 +65,7 @@
    In Report script was fuced all logic of report.  
    ReportController use Get query we are using it can get Report in xlsx format.  
    ```command: http://localhost:8080/api/Report  ```
-
+ :black_square_button: planning to do
+ 
+5. unwraping Kebernetes, deploy microservices and deploying to Azure AKS
  
