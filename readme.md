@@ -30,7 +30,8 @@
 
    For example  POST body of query to Project and Task controllers  
    ```command: http://localhost:8080/api/Project  ``` 
-   ```POST  
+   ```POST  ```
+   ```
    {  
     "p_code" : 21212,  
     "p_mgrid" : 0,   //id: 1,2,3 for subproject  
@@ -49,7 +50,8 @@
     b.And when we want to create new task we specify in "t_mgrid" id task which has already been created and have new subtask  
     
     ``` command: http://localhost:8080/api/Task  ```
-    ``` POST  
+    ``` POST  ```
+    ```
    {  
     "p_id" : 1,  
     "t_mgrid" : 1,  // need to specify this id for parent Task  
