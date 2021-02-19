@@ -24,7 +24,7 @@
    Here was realized all CRUD operations.  
 
    For example  __POST__ body of query to Project controllers  
-   ```command: http://localhost:8080/api/Project/?startDate= 1-12-2000&finishDate= 12-12-2012```
+    ```command: http://localhost:8080/api/Project?startDate=1-12-2000&finishDate=12-12-2012```
    ```POST```
    ```
    {     
