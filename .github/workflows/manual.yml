@@ -12,6 +12,6 @@ jobs:
       - name: Build the stack
         run: docker-compose up --build
       - name: Test
-        run: docker run --network container:pms-webapi appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8080/api/
+        run: docker run --network container:pms-webapi appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8080/api/Project
         
         
