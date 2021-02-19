@@ -15,7 +15,6 @@ namespace PMS.Infrastructure.IoC
             services.AddDbContext<PMSContext>(
                     options => options.UseSqlServer("name=ConnectionStrings:DefaultConnection"));
 
-
             services.AddTransient<IExportToExcel, ExportToExcel>();
 
             services.AddTransient<IRepository<Projects>, Repository<Projects>>((_) => new Repository<Projects>(Configuration, "Projects"));
@@ -23,8 +22,7 @@ namespace PMS.Infrastructure.IoC
             services.AddTransient<IRepository<Tasks>, Repository<Tasks>>((_) => new Repository<Tasks>(Configuration, "Tasks"));
 
             services.AddTransient<IRepository<MemoryReportTable>, Repository<MemoryReportTable>>((_) => new Repository<MemoryReportTable>(Configuration, "MemoryReportTable"));
-
-            //services.AddTransient<PMSContext>();
+           
         }
     }
 }
