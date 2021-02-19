@@ -18,9 +18,9 @@
    After first build of "docker-compose" will be created two Docker container so next time will need to run command:   
    command **docker-compose up**  
   
-    After this actions will be formed two "image" and two "runnung" containers which builded as "image" and running as "container":  
+  ***After this actions will be formed two "image" and two "runnung" containers which builded as "image" and running as "container":  
       a. pms-web - where is located  webapi application( inclided 3 projects)  
-      b. mssql-db - mssql Server for linux container   
+      b. mssql-db - mssql Server for linux container***   
 
    3. To run this Project need to run PMS.WebAPI subproject.
    Primarily I am using Fiddler for debugging CRUD and other query to App.   
