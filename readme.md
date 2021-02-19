@@ -14,15 +14,15 @@
    To  check of deploying scripts we can open SQL Server and run Hierarchy.DB.publish.xml(PMS.HierarchyDB project) 
    to create PMSHierarchyDB in local Database.
   
-  To  deploy of Docker container need to run docker-compose.yaml file in root of project:
+   To  deploy of Docker container need to run docker-compose.yaml file in root of project:
    command docker-compose up --build.
    After first build of "docker-compose" will be created two Docker container so
    next time will need to run command: 
    command docker-compose up
   
-  After this actions will be formed two "image" and two "runnung" containers which builded as "image" and run as "conatiner":
-    a. pms-web - where is located  webapi application( inclided 3 projects)
-    b. mssql-db - mssql Server for linux container 
+    After this actions will be formed two "image" and two "runnung" containers which builded as "image" and run as "conatiner":
+      a. pms-web - where is located  webapi application( inclided 3 projects)
+      b. mssql-db - mssql Server for linux container 
 
 
 3. To run this Project need to run PMS.WebAPI subproject.
