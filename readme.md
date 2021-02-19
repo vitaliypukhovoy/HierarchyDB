@@ -23,7 +23,7 @@
    Primarily I am using Fiddler for debugging CRUD and other query to App.   
    Here was realized all CRUD operations.  
 
-   For example  __POST__ body of query to Project and Task controllers  
+   For example  __POST__ body of query to Project controllers  
    ```command: http://localhost:8080/api/Project``` 
    ```POST```
    ```
@@ -45,6 +45,7 @@
     
    ***b. And when we want to create new task we specify in "t_mgrid" id task which has already been created and have new subtask.***  
     
+    For example  __POST__ body of query to Task controllers 
    ```command: http://localhost:8080/api/Task```
    ```POST```
    ```
