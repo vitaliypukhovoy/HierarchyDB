@@ -29,7 +29,7 @@
    Here was realized all CRUD operations.  
 
    For example  POST body of query to Project and Task controllers  
-   ```command: http://localhost:8080/api/Project   ```
+   ```command: http://localhost:8080/api/Project   
    POST  
    {  
     "p_code" : 21212,  
@@ -37,8 +37,8 @@
     "p_name" : "Sub Project",  
     "p_startdate" : "2008-01-01",  
      "p_finishdate" :  "2008-01-01"  
-   }  
-
+   }  ```
+    
    "p_mgrid" - this is interesting field in query.  
     When "p_mgrid" = 0 we can create individual Projects independet from each other.  
     And when we indicate here number of other project then will be created new subproject which  erlier indicated. nn
