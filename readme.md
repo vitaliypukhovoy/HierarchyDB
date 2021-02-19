@@ -13,7 +13,7 @@
   
    To  deploy of Docker container need to run docker-compose.yaml file in root of project: command **docker-compose up --build**.  
    After first build of "docker-compose" will be created two Docker container so next time will need to run command:**docker-compose up**  
-   or **docker-compose up d*** (without logs).
+   or **docker-compose up d** (without logs).
   
   ***After this actions will be formed two "image" and two "runnung" containers which builded as "image" and running as "container":  
       a. pms-web - where is located  webapi application( inclided 3 projects)  
