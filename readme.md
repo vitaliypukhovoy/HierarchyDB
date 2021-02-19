@@ -41,9 +41,9 @@
     And when we indicate here number of other project then will be created new subproject which  erlier indicated. nn
     This an aproach  also implemented in POST Tasks query for creating new subtasks.  
 
-   a. After ctreating  of new Project  will be also created  new task realated  with  parent project.  
+   ***a. After ctreating  of new Project  will be also created  new task realated  with  parent project.*** 
     
-   b. And when we want to create new task we specify in "t_mgrid" id task which has already been created and have new subtask  
+   ***b. And when we want to create new task we specify in "t_mgrid" id task which has already been created and have new subtask.***  
     
    ```command: http://localhost:8080/api/Task```
    ```POST```
