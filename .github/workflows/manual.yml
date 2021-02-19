@@ -11,5 +11,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the stack
         run: docker-compose up --build
-     # - name: Test
+      - name: Test
+        run: docker run --network container:pms-webapi appropriate/curl -s --retry 10 --retry-connrefused http://localhost:8080/api/
+        
         
