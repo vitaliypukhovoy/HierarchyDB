@@ -3,15 +3,14 @@
    
    :white_check_mark: this is have done
    
-   1. For realize this chellange was chosen .net Core 3.1 Framework and  
-   for connection to Database I have used Dapper Framework  
+   1. For realize this chellange was chosen .net Core 3.1 Framework and for connection to Database I have used Dapper Framework   
    This is give me to do query directly.  
    Main logic of report was developed on server side (MSSQL server)  
    I desided on to the maximum using sql scripts for better performence.  
    In project was used CRUD an approach.  
   
-2. Project was divided on 5 subprojects. 
-   in order to deploy local this test project need to open PMS.HierarchyDB.  
+   2. Project was divided on 5 subprojects.  
+   in order to deploy local this project need to open PMS.HierarchyDB.  
    To  check of deploying scripts we can open SQL Server and run Hierarchy.DB.publish.xml (PMS.HierarchyDB project)  
    to create PMSHierarchyDB in local Database.  
   
@@ -25,14 +24,14 @@
       a. pms-web - where is located  webapi application( inclided 3 projects)  
       b. mssql-db - mssql Server for linux container   
 
-3. To run this Project need to run PMS.WebAPI subproject.  
+   3. To run this Project need to run PMS.WebAPI subproject.
    Primarily I am using Fiddler for debugging CRUD and other query to App.   
    Here was realized all CRUD operations.  
 
    For example  POST body of query to Project and Task controllers  
-   ```command: http://localhost:8080/api/Project  ``` 
-   ```POST  ```
-   ```
+   ```command: http://localhost:8080/api/Project  
+   POST 
+   
    {  
     "p_code" : 21212,  
     "p_mgrid" : 0,   //id: 1,2,3 for subproject  
@@ -41,6 +40,7 @@
      "p_finishdate" :  "2008-01-01"  
    } 
     ```
+  
    "p_mgrid" - this is interesting field in query.  
     When "p_mgrid" = 0 we can create individual Projects independet from each other.  
     And when we indicate here number of other project then will be created new subproject which  erlier indicated. nn
