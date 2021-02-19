@@ -65,7 +65,9 @@
    In Report script was fuced all logic of report.  
    ReportController use Get query we are using it can get Report in xlsx format.  
    ```command: http://localhost:8080/api/Report  ```
- :black_square_button: planning to do
+
+
+:black_square_button: planning to do
  
-5. unwraping Kebernetes, deploy microservices and deploying to Azure AKS
+5. unwraping Kubernetes, deploy microservices and deploying to Azure AKS
  
