@@ -17,8 +17,12 @@
   
   ***After this actions will be formed two "image" and two "runnung" containers which builded as "image" and running as "container":  
       a. pms-web - where is located  webapi application( inclided 3 projects)  
-      b. mssql-db - mssql Server for linux container***   
-
+      b. mssql-db - mssql Server for linux container***  
+   
+   ***Example deploy from Git action
+   CONTAINER ID   IMAGE                                                  COMMAND                  CREATED        STATUS                  PORTS                    NAMES
+   5c87df73cba8   microsevices_web                                       "dotnet PMS.WebAPI.d…"   1 second ago   Up Less than a second   0.0.0.0:8080->80/tcp     pms-webapi
+   6e4b01187f16   mcr.microsoft.com/mssql/server:2019-CU4-ubuntu-16.04   "/opt/mssql/bin/perm…"   1 second ago   Up Less than a second   0.0.0.0:1433->1433/tcp   mssql-db  ***
    3. To run this Project need to run PMS.WebAPI subproject.
    Primarily I am using Fiddler for debugging CRUD and other query to App.   
    Here was realized all CRUD operations.  
