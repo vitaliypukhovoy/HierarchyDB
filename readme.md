@@ -1,4 +1,4 @@
-.                                   ***DOCUMENTATION
+.                                   ***DOCUMENTATION***
                        _(soon will be implemented deploy on kubernetes and Azure)_
    
    :white_check_mark: this is have done
