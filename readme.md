@@ -67,7 +67,7 @@
    ```command: http://localhost:8080/api/Report  ```
 
 
-:black_square_button: planning to do
+:package:  planning to do
  
-5. unwraping Kubernetes, deploy microservices and deploying to Azure AKS
+5. Unwraping Kubernetes, deploy microservices and deploying to Azure AKS
  
