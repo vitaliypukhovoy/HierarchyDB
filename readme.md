@@ -3,7 +3,7 @@
    
    :white_check_mark: this is have done
    
-   1. For realize this chellange was chosen .net Core 3.1 Framework and for connection to Database I have used Dapper Framework   
+   1. For realize this small project was chosen .net Core 3.1 Framework and for connection to Database I have used Dapper Framework   
    This is give me to do query directly. Main logic of report was developed on server side (MSSQL server)  
    I desided on to the maximum using sql scripts for better performence. In project was used CRUD an approach.  
   
